@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+   
+   --softBlue: hsl(215, 51%, 70%);
+   --cyan: hsl(178, 100%, 50%);
+
+   --veryDarkBlueMainBg : hsl(217, 54%, 11%);
+   --veryDarkBlueCardBg : hsl(216, 50%, 16%);
+   --veryDarkBlueLine : hsl(215, 32%, 27%);
+   --white: hsl(0, 0%, 100%);
+   }
+
+body {
+    font-family: 'Outfit', sans-serif;
+    font-size: 18px;
+    display: grid;
+    place-items: center;
+    background-color: var(--veryDarkBlueMainBg);
+    height: 100vh;
+    overflow: hidden;
+}
+
+.card {
+    background-color: var(--veryDarkBlueCardBg);
+    overflow: hidden;
+    width: 350px;
+    padding: 1.8rem;
+    border-radius: 12px;
+    color: var(--softBlue);
+    font-size: 18px;
+    box-shadow: 0 20px 25px 20px rgba(0, 0, 0, 0.05),
+                10px 30px 30px 30px rgba(0, 0, 0, 0.1);
+                 
+}
+
+.img-bg {
+    position: relative;
+    cursor: pointer;
+}
+
+.img-product {
+    width: 100%;
+    display: block;
+    border-radius: 12px;
+}
+
+.img-bg::after {
+    content: url(./images/icon-view.svg);
+    background:hsl(178, 100%, 50%, 0.5); 
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    transition: all 0.5s ease;
+    border-radius: 12px;
+    opacity: 0;
+}
+
+.img-bg:hover::after {
+    opacity: 1;
+}
+
+
+.overlay-icon:hover{
+    position: absolute;
+    opacity: initial;
+}
+
+.card-title {
+    margin: 30px auto 20px auto;
+    color: var(--white);
+}
+
+.card-description {
+    line-height: 1.5;
+    padding-bottom: 1.5em;
+}
+
+.price-date {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--veryDarkBlueLine);
+}
+
+.date, .price{
+    display: flex;
+    align-items: center;
+}
+
+.price {
+    color: var(--cyan)
+}
+.card-title:hover,
+.creator-name:hover {
+    cursor: pointer;
+    color: var(--cyan);
+}
+
+img {
+    margin-right: 0.5rem;
+}
+
+.creator {
+    display: flex;
+    align-items: center;
+    padding-top: 1rem;
+}
+
+span {
+    color: var(--white);
+    padding-left: 0.3rem;
+}
+
+.creator-img {
+    width: 2.5rem;
+    border: 0.1rem solid var(--white);
+    border-radius: 50%;
+}
+
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
